@@ -1,28 +1,20 @@
-bondbenbond.com, www.bondbenbond.com {
-  root * /srv/www/bondbenbond.com
+benbond.com, www.benbond.com {
+  root * /srv/www/benbond.com
   file_server
 }
 
-test-werewolf.bondbenbond.com {
+test-werewolf.benbond.com {
   reverse_proxy werewolf-web-test:80
 }
 
-test-api-werewolf.bondbenbond.com {
+test-api-werewolf.benbond.com {
   reverse_proxy werewolf-server-test:4000
 }
 
-werewolf.bondbenbond.com {
+werewolf.benbond.com {
   reverse_proxy werewolf-web:80
 }
 
-api-werewolf.bondbenbond.com {
+api-werewolf.benbond.com {
   reverse_proxy werewolf-server:4000
-}
-
-auth-api.bondbenbond.com {
-  reverse_proxy oauth-integration-api:8080
-}
-
-auth-ui.bondbenbond.com {
-  reverse_proxy oauth-integration-ui:80
 }
